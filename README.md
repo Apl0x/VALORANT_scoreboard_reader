@@ -24,6 +24,7 @@ It is possible to hardcode this into your personal version by altering the write
 
 The output should look something like this: <br>
 ![image](https://user-images.githubusercontent.com/57774007/220700904-34984cfc-61cd-4004-b12f-9393d50e6664.png)
+The output is sorted alphabetically by name such that all of your team with the same tag should be grouped together.
 
 ## Prerequsites
 sys, opencv, numpy, pytessetact, math, csv, tqdm and PIL.
