@@ -1,6 +1,8 @@
 # VALORANT_scoreboard_reader
 Python tool using tesseract to OCR a screenshot of a valorant end game scoreboard and turn it into a csv file.
 
+Written by Alex 'Aplox' Porter (twitter.com/_Aplox). Huge thanks to Vladk0r (twitter.com/vladk0r_vlr) for pushing me to finally do this!
+
 This repository containts two files. 
 
 1. File with the class and all of the functions (scoreboard_reader.py)
