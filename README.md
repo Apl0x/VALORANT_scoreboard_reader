@@ -26,4 +26,4 @@ It is possible to hardcode this into your personal version by altering the write
 sys, opencv, numpy, pytessetact, math, csv, tqdm and PIL.
 
 All dependancies may be installed using pip or pip3 as such:
-pip3 install os-sys opencv-python pytesseract python-math python-csv tqdm pillow
+<code> pip3 install os-sys opencv-python pytesseract python-math python-csv tqdm pillow </code>
