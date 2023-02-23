@@ -19,7 +19,7 @@ The script will initially ask for a file name i.e. screenshot.png.
 This can be modified in the run script if you wish to hardcode the name in.
 
 The tool then splits the image by row and then each row by cell.
-Each cell is then ran through tesseract and the converted to a string which can be output.
+Each cell is then passed through tesseract and converted to a string which can be output.
 
 The output is as a csv file. The script will prompt if you want the file in EU (; as delimiter) or UK (, as delimiter) format.
 It is possible to hardcode this into your personal version by altering the write_csv function.
