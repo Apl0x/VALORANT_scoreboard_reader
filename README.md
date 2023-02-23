@@ -12,8 +12,8 @@ This repository containts two files.
 ## How to use
 The first thing you need is a screenshot of a scoreboard like this:
 ![ss_1](https://user-images.githubusercontent.com/57774007/220695198-47f6b995-b1e4-4fc8-83f6-46325065e388.png)
-The tool has been tested on Enlish and Turkish language screenshots.
-The tool only works on screenshots in 16:9 aspect ratio currently.
+The tool has been tested on English and Turkish language screenshots.
+The tool only works on screenshots in 16:9 aspect ratio currently. Unfortunately more testing is required to work with stretched resolution screenshots.
 
 The script will initially ask for a file name i.e. screenshot.png.
 This can be modified in the run script if you wish to hardcode the name in.
