@@ -29,6 +29,11 @@ The output should look something like this: <br>
 The output is sorted alphabetically by name such that all of your team with the same tag should be grouped together.
 
 ## Prerequsites
+Firstly you need tesseract-OCR. Instructions to install here: <br>
+https://medium.com/@ahmedbr/how-to-implement-pytesseract-properly-d6e2c2bc6dda <br>
+
+python dependencies:
+
 sys, opencv, numpy, pytessetact, math, csv, tqdm and PIL.
 
 All dependancies may be installed using pip or pip3 as such:
