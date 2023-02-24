@@ -36,5 +36,5 @@ python dependencies:
 
 sys, opencv, numpy, pytessetact, math, csv, tqdm and PIL.
 
-All dependancies may be installed using pip or pip3 as such:
-<code> pip3 install os-sys opencv-python numpy pytesseract python-math python-csv tqdm pillow </code>
+All dependancies may be installed using the following command:
+<code> pip3 install -r "requirements.txt" </code>
