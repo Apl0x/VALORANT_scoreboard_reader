@@ -495,7 +495,7 @@ class functions:
         output = sorted(output,  key=lambda x: x[0])
         return output
 
-    def write_csv(output):
+    def write_csv(output,delim):
         """
         Writes the output list to a CSV file named "scoreboard.csv".
 
@@ -505,14 +505,9 @@ class functions:
         Returns:
         None
         """
-        inp = input("Do you want your CSV in EU or UK format?   ")
-        if inp == "EU":
-            delim=';'
-        elif inp == "UK":
-            delim=","
-        else:
-            print("You must choose between EU and UK")
-        #Write the output file in csv format.   
+        #Write the output file in csv format. 
+        delim = delim        
         with open('scoreboard.csv', 'w', newline='') as f:
             writer = csv.writer(f,delimiter=delim)
             writer.writerows(output)
+
