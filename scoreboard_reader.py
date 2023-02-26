@@ -309,7 +309,7 @@ class functions:
         Returns:
         - cells: A list of bounding rectangles representing the cells of the table.
         """
-        BLUR_KERNEL_SIZE = (9, 9)
+        BLUR_KERNEL_SIZE = (11, 11)
         STD_DEV_X_DIRECTION = 0
         STD_DEV_Y_DIRECTION = 0
         blurred = cv2.GaussianBlur(image, BLUR_KERNEL_SIZE, STD_DEV_X_DIRECTION, STD_DEV_Y_DIRECTION)
