@@ -38,3 +38,6 @@ sys, opencv, numpy, pytessetact, math, csv, tqdm and PIL.
 
 All dependancies may be installed using the following command:
 <code> pip3 install -r "requirements.txt" </code>
+
+##FAQ
+Coming soon?
