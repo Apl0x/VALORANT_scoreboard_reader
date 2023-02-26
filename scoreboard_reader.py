@@ -29,7 +29,7 @@ class functions:
         tables (List[numpy.ndarray]): List of extracted tables
         
         """
-        BLUR_KERNEL_SIZE = (17, 17)
+        BLUR_KERNEL_SIZE = (3, 3)
         STD_DEV_X_DIRECTION = 0
         STD_DEV_Y_DIRECTION = 0
         blurred = cv2.GaussianBlur(image, BLUR_KERNEL_SIZE, STD_DEV_X_DIRECTION, STD_DEV_Y_DIRECTION)
