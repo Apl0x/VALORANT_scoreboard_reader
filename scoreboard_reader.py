@@ -29,7 +29,7 @@ class functions:
         tables (List[numpy.ndarray]): List of extracted tables
         
         """
-        BLUR_KERNEL_SIZE = (3, 3)
+        BLUR_KERNEL_SIZE = (1, 1)
         STD_DEV_X_DIRECTION = 0
         STD_DEV_Y_DIRECTION = 0
         blurred = cv2.GaussianBlur(image, BLUR_KERNEL_SIZE, STD_DEV_X_DIRECTION, STD_DEV_Y_DIRECTION)
@@ -299,7 +299,7 @@ class functions:
             lang=lang
         )
 
-    def row_seperator(image):
+    def row_seperator(image, BLUR_KERNEL_SIZE_input):
         """
         Separates the rows of a table in an image using various computer vision techniques.
 
@@ -309,7 +309,7 @@ class functions:
         Returns:
         - cells: A list of bounding rectangles representing the cells of the table.
         """
-        BLUR_KERNEL_SIZE = (11, 11)
+        BLUR_KERNEL_SIZE = BLUR_KERNEL_SIZE_input
         STD_DEV_X_DIRECTION = 0
         STD_DEV_Y_DIRECTION = 0
         blurred = cv2.GaussianBlur(image, BLUR_KERNEL_SIZE, STD_DEV_X_DIRECTION, STD_DEV_Y_DIRECTION)
@@ -369,7 +369,7 @@ class functions:
         bounding_rects=functions.get_non_overlapping_rectangles(bounding_rects)
         
         cells = [c for c in bounding_rects]
-        
+
         return cells
         
     def image_resize(image: np.ndarray, scale_percent: int) -> np.ndarray:
@@ -456,9 +456,17 @@ class functions:
             image=row[0]
             
             #Seperate rows
-            cells=functions.row_seperator(image)
+            cells=functions.row_seperator(image,(9,9))
             cells=sorted(cells,key=lambda x:x[0])
             
+            #Seperate the cells
+            cells = [c for c in cells if c[0] > (0.24*(row[0].shape[1]))]
+            
+            #Get cells again if did not capture them all
+            if len(cells) != 8:
+                cells=functions.row_seperator(image,(11,11))
+                cells=sorted(cells,key=lambda x:x[0])
+                cells = [c for c in cells if c[0] > (0.24*(row[0].shape[1]))]
             #This is in here for debugging.
             #Draw on each cell to check
             #This makes the code bug out. Helpful to debug and see the boxes but seems to draw rectangles on wrong image?
@@ -477,7 +485,6 @@ class functions:
             temp_output.append(str(ocr_name).strip())
             
             #OCR each cell to get numbers
-            cells = [c for c in cells if c[0] > (0.24*(row[0].shape[1]))]
             for c, cnt in enumerate(cells):
                 x, y, w, h = cnt
                 cropped=image[scale*y:scale*(y+h), scale*x:scale*(x+w)]
@@ -510,4 +517,3 @@ class functions:
         with open('scoreboard.csv', 'w', newline='') as f:
             writer = csv.writer(f,delimiter=delim)
             writer.writerows(output)
-
