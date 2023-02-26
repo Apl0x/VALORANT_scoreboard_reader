@@ -30,6 +30,13 @@ cell_images_rows = srf.extract_cell_images_from_table(image)
 output = srf.read_table_rows(cell_images_rows)
 
 #Writes the output.
-srf.write_csv(output)
+inp = input("Do you want your CSV in EU or UK format?   ")
+if inp == "EU":
+    delim=';'
+elif inp == "UK":
+    delim=","
+else:
+    print("You must choose between EU and UK")
+srf.write_csv(output, delim)
     
 print("Done. Output written to scoreboard.csv.")
