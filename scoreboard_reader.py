@@ -452,7 +452,7 @@ class functions:
         for row in tqdm(cell_images_rows):
             temp_output=[]
             n+=1
-            cv2.imwrite("test_rows" +str(n) + ".png", row[0])
+            #cv2.imwrite("test_rows" +str(n) + ".png", row[0]) # for debugging
             image=row[0]
             
             #Seperate rows
