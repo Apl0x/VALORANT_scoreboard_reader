@@ -21,7 +21,7 @@ pytesseract.pytesseract.tesseract_cmd = "tesseract"
 image_filename = input("Please input the name of your screenshot i.e ScreenShot.png:   ")
 image = cv2.imread(image_filename, cv2.IMREAD_GRAYSCALE)
 image = srf.find_tables(image)
-cv2.imwrite("table.png",image)
+#cv2.imwrite("table.png",image)
 
 #Extracts each row of elements from the table
 cell_images_rows = srf.extract_cell_images_from_table(image)
